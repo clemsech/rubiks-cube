@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste aléatoire</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button onclick="getRandomElement()">Clique ici pour un élément aléatoire</button>
+    <div class="output" id="output"></div>
+</div>
+
+<script>
+    const liste = [
+        "F R' F' R U2' F R' F' R2' U2' R'",
+        "F R' F' R U2' F R' F' R U' R U' R'",
+        "F R' F' R M U R U' R' U' M'",
+        "F R U R' d R' U' R U' R",
+        "r U r' R U R' U' R U R' U' r U' r'"
+    ];
+
+    function getRandomElement() {
+        const randomIndex = Math.floor(Math.random() * liste.length);
+        const element = liste[randomIndex];
+        document.getElementById("output").innerText = element;
+    }
+</script>
+
+</body>
+</html>
